@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333;
+    color: whitesmoke;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 2em auto;
+}
