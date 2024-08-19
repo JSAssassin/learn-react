@@ -1,5 +1,5 @@
-import MainContent from './components/MainContent';
-import Navbar from './components/Navbar';
+import MainContent from './MainContent';
+import Navbar from './Navbar';
 
 export default function App() {
     return (
