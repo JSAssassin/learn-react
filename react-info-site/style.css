@@ -1,1 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html,
+body {
+    font-family: 'Inter', sans-serif;
+
+}
+
+:root {
+    /* COLORS */
+    --nav-bg: #21222A;
+
+    /* SIZES */
+    --nav-height: 91px;
+    --nav-width: 550px;
+    --nav-img-height: 29px;
+    --nav-img-width: 29px;
+}
+
+.navbar--container {
+    min-width: var(--nav-width);
+    height: var(--nav-height);
+    background: var(--nav-bg);
+    position: relative;
+}
+
+.navbar--logo_txt {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #61DAFB;
+    position: absolute;
+    top: 31px;
+    left: 62px;
+}
+
+.navbar--logo_img {
+    width: var(--nav-img-width);
+    height: var(--nav-img-height);
+    position: absolute;
+    top: 31px;
+    left: 26px;
+}

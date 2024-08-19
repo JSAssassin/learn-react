@@ -4,8 +4,8 @@ import Navbar from './Navbar';
 export default function App() {
     return (
         <div>
-            <MainContent />
             <Navbar />
+            <MainContent />
         </div>
     )
 }
