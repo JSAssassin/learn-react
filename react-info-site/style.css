@@ -7,7 +7,7 @@
 html,
 body {
     font-family: 'Inter', sans-serif;
-
+    height: 100vh;
 }
 
 :root {
@@ -24,13 +24,13 @@ body {
     --nav-img-width: 29px;
     --nav-font-size: 1.3rem;
     --main-container-height: 459px;
-    --min-main-container-width: var(--nav-width);
+    --main-container-width: var(--nav-width);
     --main-header-font-size: 2.5rem;
     --main-list-item-font-size: 1rem;
 }
 
 .navbar--container {
-    min-width: var(--nav-width);
+    width: var(--nav-width);
     height: var(--nav-height);
     background: var(--nav-bg);
     position: relative;
@@ -57,14 +57,16 @@ body {
     background: var(--main-bg);
     height: 100vh;
     min-height: var(--min-main-container-height);
-    min-width: var(--min-main-container-width);
+    width: var(--main-container-width);
     color: var(--main-font-color);
+    position: relative;
 }
 
 .main--header {
     font-size: var(--main-header-font-size);
     font-weight: 700;
     padding: 57px 99px 46px 27px;
+    letter-spacing: -0.05em;
 }
 
 .main--list {
@@ -74,5 +76,17 @@ body {
 .main--list_item {
     font-size: var(--main-list-item-font-size);
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 1em;
+}
+
+.main--list_item::marker {
+    color: #61DAFB;
+    font-size: 1.4rem;
+}
+
+.main--bg-logo_img {
+    height: 263px;
+    position: absolute;
+    left: 418px;
+    top: 107px;
 }
