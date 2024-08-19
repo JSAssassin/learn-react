@@ -54,12 +54,16 @@ body {
 }
 
 .main--container {
-    background: var(--main-bg);
     height: 100vh;
     min-height: var(--min-main-container-height);
     width: var(--main-container-width);
     color: var(--main-font-color);
-    position: relative;
+    background-image: url(./src/assets/reactjs-icon-2.png);
+    background-repeat: no-repeat;
+    background-position: right 30%;
+    background-color: var(--main-bg);
+    background-size: 131px 263px;
+    /* position: relative; */
 }
 
 .main--header {
@@ -84,9 +88,9 @@ body {
     font-size: 1.4rem;
 }
 
-.main--bg-logo_img {
+/* .main--bg-logo_img {
     height: 263px;
     position: absolute;
     left: 418px;
     top: 107px;
-}
+} */

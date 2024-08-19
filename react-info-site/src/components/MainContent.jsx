@@ -9,7 +9,7 @@ export default function MainContent() {
                 <li className="main--list_item">Is maintained by Meta</li>
                 <li className="main--list_item">Powers thousands of enterprise apps, including mobile apps</li>
             </ul>
-            <img className="main--bg-logo_img" src="../src/assets/reactjs-icon-2.png" alt="halved react logo" />
+            {/* <img className="main--bg-logo_img" src="../src/assets/reactjs-icon-2.png" alt="halved react logo" /> */}
         </main>
     )
 };
