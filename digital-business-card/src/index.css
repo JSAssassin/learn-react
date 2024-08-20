@@ -8,6 +8,12 @@
   --website-link-color: #F5F5F5;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--body-bg);
   height: 100vh;
@@ -100,6 +106,29 @@ p {
   background-color: #5093E2;
 }
 
+.about--container {
+  width: 317px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--info-container-bg);
+  margin: 0 auto;
+  padding: 0 35px;
+  row-gap: 5px;
+}
+
+.about--container > h2 {
+  font-size: 1rem;
+  color: #F5F5F5;
+  font-weight: 700;
+}
+
+.about--container > p {
+  width: 247px;
+  font-size: 0.7em;
+  color: #DCDCDC;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
 
 @media (prefers-color-scheme: light) {
   /* :root {
