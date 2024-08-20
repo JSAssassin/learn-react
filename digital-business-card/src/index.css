@@ -2,6 +2,8 @@
   --body-bg: #1C1C1C;
   --container-bg: #23252C;
   --info-container-bg: #1A1B21;
+  --footer-container-bg: #161619;
+  --footer-icon-bg: #918E9B;
   --h1-font-color: #FFFFFF;
   --font-family: 'Inter', sans-serif;
   --job-title-color: #F3BF99;
@@ -123,11 +125,63 @@ p {
 }
 
 .about--container > p {
-  width: 247px;
   font-size: 0.7em;
   color: #DCDCDC;
   font-weight: 400;
   margin-bottom: 25px;
+}
+
+.interests--container {
+  width: 317px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--info-container-bg);
+  margin: 0 auto;
+  padding: 0 35px 50px;
+  row-gap: 5px;
+}
+
+.interests--container > h2 {
+  font-size: 1rem;
+  color: #F5F5F5;
+  font-weight: 700;
+}
+
+.interests--container > p {
+  font-size: 0.7em;
+  color: #DCDCDC;
+  font-weight: 400;
+  /* margin-bottom: 25px; */
+}
+
+.footer--container {
+  width: 317px;
+  height: 64px;
+  background-color: var(--footer-container-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  margin: 0 auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.footer--container > .icon {
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  background-color: var(--footer-icon-bg);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  box-sizing: border-box;
+}
+
+.icon.fb {
+  padding-bottom: 0;
 }
 
 @media (prefers-color-scheme: light) {
