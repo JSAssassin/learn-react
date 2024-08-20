@@ -4,7 +4,15 @@
   --info-container-bg: #1A1B21;
   --footer-container-bg: #161619;
   --footer-icon-bg: #918E9B;
+  --icon-envelop-bg: #FFFFFF;
+  --icon-envelop-color: #374151;
+  --icon-envelop-border-color: #D1D5DB;
+  --icon-linkedin-bg: #5093E2;
+  --icon-linkedin-color: #FFFFFF;
+  --icon-box-shadow-color: #0000000D;
   --h1-font-color: #FFFFFF;
+  --h2-font-color: #F5F5F5;
+  --p-font-color: #DCDCDC;
   --font-family: 'Inter', sans-serif;
   --job-title-color: #F3BF99;
   --website-link-color: #F5F5F5;
@@ -46,12 +54,16 @@ p {
   align-items: center;
   background-color: var(--info-container-bg);
   margin: 44px auto 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .info--container>img {
   width: 317px;
   aspect-ratio: 1;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .info--container>h1 {
@@ -96,16 +108,17 @@ p {
 }
 
 .buttons .icon-envelop {
-  border: 1px solid #D1D5DB;
-  box-shadow: 0px 1px 2px 0px #0000000D;
-  color: #374151;
-  background-color: #FFFFFF;
+  border: 1px solid var(--icon-envelop-border-color);
+  box-shadow: 0px 1px 2px 0px var(--icon-box-shadow-colo);
+  color: var(--icon-envelop-color);
+  background-color: var(--icon-envelop-bg);
 }
 
 .buttons .icon-linkedin {
-  box-shadow: 0px 1px 2px 0px #0000000D;
-  color: #FFFFFF;
-  background-color: #5093E2;
+  box-shadow: 0px 1px 2px 0px var(--icon-box-shadow-colo);
+  color: var(--icon-linkedin-color);
+  background-color: var(--icon-linkedin-bg);
+  border-color: var(--icon-linkedin-bg);
 }
 
 .about--container {
@@ -118,15 +131,15 @@ p {
   row-gap: 5px;
 }
 
-.about--container > h2 {
+.about--container>h2 {
   font-size: 1rem;
-  color: #F5F5F5;
+  color: var(--h2-font-color);
   font-weight: 700;
 }
 
-.about--container > p {
+.about--container>p {
   font-size: 0.7em;
-  color: #DCDCDC;
+  color: var(--p-font-color);
   font-weight: 400;
   margin-bottom: 25px;
 }
@@ -141,17 +154,16 @@ p {
   row-gap: 5px;
 }
 
-.interests--container > h2 {
+.interests--container>h2 {
   font-size: 1rem;
-  color: #F5F5F5;
+  color: var(--h2-font-color);
   font-weight: 700;
 }
 
-.interests--container > p {
+.interests--container>p {
   font-size: 0.7em;
-  color: #DCDCDC;
+  color: var(--p-font-color);
   font-weight: 400;
-  /* margin-bottom: 25px; */
 }
 
 .footer--container {
@@ -167,7 +179,7 @@ p {
   border-bottom-right-radius: 10px;
 }
 
-.footer--container > .icon {
+.footer--container>.icon {
   width: 25px;
   height: 25px;
   font-size: 25px;
@@ -176,7 +188,8 @@ p {
   padding: 5px;
 }
 
-svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
   box-sizing: border-box;
 }
 
@@ -185,6 +198,21 @@ svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
 }
 
 @media (prefers-color-scheme: light) {
-  /* :root {
-  } */
+  :root {
+    --body-bg: #1C1C1C;
+    --footer-container-bg: #D5D4D8;
+    --container-bg: #23252C;
+    --info-container-bg: #F5F5F5;
+    --icon-linkedin-bg: #297FE5;
+
+    --h1-font-color: #2B283A;
+    --h2-font-color: #2B283A;
+    --p-font-color: #4A4E74;
+    --job-title-color: #F47D27;
+    --website-link-color: #4A4E74;
+  }
+
+  .footer--container>.icon  {
+    color: var(--footer-container-bg);
+  }
 }
