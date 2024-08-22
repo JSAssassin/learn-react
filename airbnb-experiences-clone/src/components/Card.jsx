@@ -1,8 +1,9 @@
-export default function Card() {
+export default function Card(props) {
+    const { img, rating, reviewCount, country, title, price } = props;
     return (
         <div className="card--container">
             <img
-                src="../assets/katie-zaferes.png"
+                src={`../assets/${img}`}
                 className="card--img"
                 alt="Main card image."
             />
@@ -13,12 +14,12 @@ export default function Card() {
                         className="card--img-star"
                         alt="Star icon"
                     />
-                    <span>5.0</span>
-                    <span className="grey">(6) &bull;</span>
-                    <span className="grey">USA</span>
+                    <span>{rating}</span>
+                    <span className="grey">({reviewCount}) &bull;</span>
+                    <span className="grey">{country}</span>
                 </div>
-                <p>Life lessons with Katie Zaferes</p>
-                <p><span className="bold">From $136</span> / person</p>
+                <p>{title}</p>
+                <p><span className="bold">From ${price}</span> / person</p>
             </div>
         </div>
     )
