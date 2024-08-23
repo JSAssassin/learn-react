@@ -1,5 +1,5 @@
 export default function Card(props) {
-    const { img, rating, reviewCount, country, title, price } = props;
+    const { img, rating, reviewCount, location, title, price } = props;
     return (
         <div className="card--container">
             <img
@@ -16,7 +16,7 @@ export default function Card(props) {
                     />
                     <span>{rating}</span>
                     <span className="grey">({reviewCount}) &bull;</span>
-                    <span className="grey">{country}</span>
+                    <span className="grey">{location}</span>
                 </div>
                 <p>{title}</p>
                 <p><span className="bold">From ${price}</span> / person</p>
