@@ -13,6 +13,7 @@ function App() {
       title={item.title}
       price={item.price}
       location={item.location}
+      openSpots={item.openSpots}
     />)
   return (
     <div className='app-container'>
