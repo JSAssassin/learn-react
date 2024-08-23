@@ -1,6 +1,6 @@
 export default function Card(props) {
     const {
-        img, rating, reviewCount, location, title, price, openSpots
+        coverImg, stats, location, title, price, openSpots
     } = props;
     let badgeText;
     if(openSpots === 0) {
@@ -12,7 +12,7 @@ export default function Card(props) {
         <div className="card--container">
             {badgeText && <div className="card--badge">{badgeText}</div>}
             <img
-                src={`../assets/${img}`}
+                src={`../assets/${coverImg}`}
                 className="card--img"
                 alt="Main card image."
             />
@@ -23,8 +23,8 @@ export default function Card(props) {
                         className="card--img-star"
                         alt="Star icon"
                     />
-                    <span>{rating}</span>
-                    <span className="grey">({reviewCount}) &bull;</span>
+                    <span>{stats.rating}</span>
+                    <span className="grey">({stats.reviewCount}) &bull;</span>
                     <span className="grey">{location}</span>
                 </div>
                 <p>{title}</p>

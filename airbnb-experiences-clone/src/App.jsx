@@ -7,13 +7,7 @@ function App() {
   const cards = data.map(item =>
     <Card
       key={item.id}
-      img={item.coverImg}
-      rating={item.stats.rating}
-      reviewCount={item.stats.reviewCount}
-      title={item.title}
-      price={item.price}
-      location={item.location}
-      openSpots={item.openSpots}
+      {...item}
     />)
   return (
     <div className='app-container'>
