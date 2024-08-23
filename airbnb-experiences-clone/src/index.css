@@ -38,7 +38,7 @@ h1 {
   width: 100vw;
   max-width: 550px;
   min-width: 320px;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -85,6 +85,7 @@ h1 {
   font-size: 12px;
   font-weight: 300;
   color: var(--card-font-color);
+  flex: 0 0 auto; /* Prevents cards from shrinking and growing */
 }
 
 .card--img {
@@ -110,4 +111,12 @@ h1 {
 .card--img-star {
   width: 14px;
   height: 14px;
+}
+
+.cards--container {
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 20px;
+  overflow-x: auto;
+  padding: 35px;
 }

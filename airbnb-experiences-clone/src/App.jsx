@@ -4,20 +4,23 @@ import Navbar from '../src/components/Navbar'
 import data from './data.js'
 
 function App() {
-  const cardElements = data.map(d => <Card
-    key={d.id}
-    img={d.coverImg}
-    rating={d.stats.rating}
-    reviewCount={d.stats.reviewCount}
-    title={d.title}
-    price={d.price}
-    location={d.location}
-  />)
+  const cards = data.map(item =>
+    <Card
+      key={item.id}
+      img={item.coverImg}
+      rating={item.stats.rating}
+      reviewCount={item.stats.reviewCount}
+      title={item.title}
+      price={item.price}
+      location={item.location}
+    />)
   return (
     <div className='app-container'>
       <Navbar />
       <Hero />
-      {cardElements}
+      <section className="cards--container">
+        {cards}
+      </section>
     </div>
   )
 }
