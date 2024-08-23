@@ -1,0 +1,42 @@
+:root {
+  --font-family: 'Inter', sans-serif;
+  --navbar-bg: #F55A5A;
+  --navbar-font-color: #FFFFFF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-family);
+}
+
+
+.navbar--container {
+  width: 550px;
+  height: 55px;
+  background: var(--navbar-bg);
+  color: var(--navbar-font-color);
+  display: flex;
+  column-gap: 7px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar--container > h2 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -7.5%;
+}
+
+.navbar--globe-icon {
+  width: 24px;
+  height: 24px;
+}
