@@ -7,7 +7,8 @@ function App() {
     <Card
       key={item.id}
       {...item}
-    />)
+    />
+  )
   return (
     <div className='app-container'>
       <Navbar />

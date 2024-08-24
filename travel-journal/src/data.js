@@ -15,7 +15,7 @@ export default [
         id: 2,
         title: "Sydney Opera House",
         location: "AUSTRALIA",
-        mapLink: 'https://www.google.com/maps/place/Sydney+Opera+House',
+        mapLink: 'https://www.google.com/maps/place/Sydney+Opera+House/@-33.8567844,151.2127218,17z',
         coverImg: "sydney-opera-house.png",
         dateRange: {
             start: '2021-05-27',
