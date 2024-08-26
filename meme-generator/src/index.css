@@ -92,3 +92,7 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+.meme--img {
+  max-width: 100%;
+}

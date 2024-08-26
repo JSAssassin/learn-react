@@ -1,4 +1,14 @@
+import {useState} from 'react'
+import memeData from '../memeData'
+
 export default function Meme () {
+    const [memeImg, setMemeImg] = useState("http://i.imgflip.com/1bij.jpg");
+    function getMemeImage() {
+        const {data: {memes}} = memeData;
+        const index = Math.floor(Math.random() * memes.length);
+        const randomImg = memes[index].url;
+        setMemeImg(randomImg)
+    }
     return (
         <main className="meme--container">
             <form className="meme--form">
@@ -30,10 +40,19 @@ export default function Meme () {
                         placeholder="And take my money"
                     />
                 </div>
-                <button type="button" className="meme--form-btn">
+                <button
+                    type="button"
+                    className="meme--form-btn"
+                    onClick={getMemeImage}
+                >
                     Get a new meme image 🖼
                 </button>
             </form>
+            <img
+                src={memeImg}
+                alt="meme image"
+                className='meme--img'
+            />
         </main>
     )
 }
