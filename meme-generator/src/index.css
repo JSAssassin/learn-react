@@ -44,3 +44,38 @@ html, body {
   font-size: 12px;
   font-weight: 500;
 }
+
+.meme--container {
+  width: 477px;
+  margin: 28px auto 0 auto;
+}
+
+.meme--form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  column-gap: 33px;
+  row-gap: 15px;
+}
+
+.meme--form-btn {
+  grid-column: 1 / -1;
+  font-family: inherit;
+  border-radius: 5px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meme--form-input {
+  font-family: inherit;
+  border-radius: 5px;
+  border: 0.82px solid #D1D5DB;
+  box-shadow: 0px 0.82px 1.64px 0px #0000000D;
+  text-indent: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+}
