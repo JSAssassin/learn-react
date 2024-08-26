@@ -1,6 +1,6 @@
 export default function Header () {
     return (
-        <nav className="header--container">
+        <header className="header--container">
             <img
                 src="../assets/troll-face.png"
                 width="40"
@@ -10,6 +10,6 @@ export default function Header () {
             />
             <h1 className="header--title">Meme Generator</h1>
             <h2 className="header--project">React Course - Project 3</h2>
-        </nav>
+        </header>
     )
 }
