@@ -30,7 +30,7 @@ export default function Meme () {
                         placeholder="And take my money"
                     />
                 </div>
-                <button className="meme--form-btn">
+                <button type="button" className="meme--form-btn">
                     Get a new meme image 🖼
                 </button>
             </form>
