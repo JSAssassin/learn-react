@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --navbar-color: #FFFFFF;
+  --navbar-bg: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #262626;
+  color: #D9D9D9;
+  padding: 20px;
+}
+
+.counter--container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.counter--display {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #262626;
+}
+
+.counter--container > button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #737373;
+  color: #D9D9D9;
+  font-size: 1.5rem;
+}
+
+.counter--container > button:hover {
+  background-color: #404040;
+  color: #D9D9D9;
+}
+
+.counter--container > button:focus {
+  outline: none;
+}
+
+.counter--plus {
+  margin-left: -20px;
+}
+
+.counter--minus {
+  margin-right: -20px;
+  z-index: 1;
+}
