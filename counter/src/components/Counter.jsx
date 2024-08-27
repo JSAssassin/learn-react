@@ -6,7 +6,6 @@ export default function Counter () {
     function add() {
         setCount(prevVal => prevVal + 1)
     }
-
     function subtract() {
         setCount(prevVal => prevVal - 1)
     }
