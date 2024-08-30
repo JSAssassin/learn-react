@@ -1,9 +1,17 @@
+import {useState} from 'react';
 import WindowTracker from './components/WindowTracker.jsx'
 
 function App() {
+  const [show, setShow] = useState(true)
+  function toggle() {
+    setShow(prevShow => !prevShow)
+}
   return (
     <div className='app-container'>
-      <WindowTracker />
+      <button onClick={toggle}>
+        Toggle WindowTracker
+      </button>
+      {show && <WindowTracker />}
     </div>
   )
 }

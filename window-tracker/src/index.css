@@ -9,7 +9,7 @@ body {
   padding: 2rem;
 }
 
-.container{
+.app-container{
   display: flex;
   flex-direction: column;
 }
