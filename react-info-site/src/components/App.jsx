@@ -3,14 +3,14 @@ import Navbar from './Navbar';
 import {useState} from 'react';
 
 export default function App() {
-    const [lightMode, setLightMode] = useState(false);
-    function toggleLightMode() {
-        setLightMode(prevVal => !prevVal);
+    const [darkMode, setDarkMode] = useState(true);
+    function toggleDarkMode() {
+        setDarkMode(prevVal => !prevVal);
     }
     return (
         <div>
-            <Navbar lightMode={lightMode} toggleLightMode={toggleLightMode} />
-            <MainContent lightMode={lightMode}/>
+            <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <MainContent darkMode={darkMode}/>
         </div>
     )
 }

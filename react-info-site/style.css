@@ -13,9 +13,10 @@ body {
 :root {
     /* COLORS */
     --nav-bg: #21222A;
-    --main-bg: #282D35;
+    --nav-bg-light: #FFFFFF;
+    --main-bg: #FFFFFF;
     --nav-font-color: #61DAFB;
-    --main-font-color: #FFFFFF;
+    --main-font-color: #000000;
 
     /* SIZES */
     --nav-height: 91px;
@@ -32,7 +33,7 @@ body {
 .navbar--container {
     width: var(--nav-width);
     height: var(--nav-height);
-    background: var(--nav-bg);
+    background: var(--nav-bg-light);
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -41,8 +42,8 @@ body {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.navbar--container.light {
-    background-color: #ffffff;
+.navbar--container.dark {
+    background-color: var(--nav-bg);
 }
 
 .navbar--logo_txt {
@@ -120,54 +121,54 @@ body {
 .toggler-slider--circle {
     height: 13px;
     width: 13px;
-    background-color: black;
+    background-color: white;
     border-radius: 50%;
 }
 
 .toggler-slider {
     width: 25px;
     height: 13px;
-    background-color: #F5F5F5;
+    background-color: #2B283A;
     border-radius: 2rem;
     margin-inline: 7px;
     cursor: pointer;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid white;
+    border: 1px solid black;
     box-sizing: content-box;
 }
 
 .toggler-dark {
-    color: #918E9B;
-}
-
-.toggler-light {
-    color: #FFFFFF;
-}
-
-.navbar--container.light .toggler-slider {
-    border-color: black;
-    background-color: #2B283A;
-}
-
-.navbar--container.light .toggler-slider--circle {
-    background-color: white;
-}
-
-.navbar--container.light .toggler-light {
-    color: #918E9B;
-}
-
-.navbar--container.light .toggler-dark {
     color: #D5D4D8;
 }
 
-.navbar--container.light .toggler-slider {
+.toggler-light {
+    color: #2B283A;
+}
+
+.navbar--container.dark .toggler-slider {
+    border-color: white;
+    background-color: #F5F5F5 ;
+}
+
+.navbar--container.dark .toggler-slider--circle {
+    background-color: #222222;
+}
+
+.navbar--container.dark .toggler-light {
+    color: #918E9B;
+}
+
+.navbar--container.dark .toggler-dark {
+    color: #D5D4D8;
+}
+
+.navbar--container.dark .toggler-slider {
     justify-content: flex-end;
 }
 
-main.light {
-    background-color: white;
-    color: #2B283A;
+main.dark {
+    background-color: #282D35;
+    color: #FFFFFF;
 }
