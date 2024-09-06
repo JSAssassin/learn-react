@@ -48,7 +48,7 @@ function App() {
             notes.length > 0 &&
             <Editor
               currentNote={findCurrentNote()}
-              updateNode={updateNote}
+              updateNote={updateNote}
             />
           }
         </Split>
