@@ -1,8 +1,69 @@
+import React from "react"
+import Editor from "./components/Editor"
+import Sidebar from "./components/Sidebar"
+import Split from "react-split"
+import {nanoid} from "nanoid"
 
 function App() {
+  const [notes, setNotes] = React.useState([]);
+  const [currentNoteId, setCurrentNoteId] = React.useState(
+    (notes[0] && notes[0].id) || ""
+  )
+  function createNewNote() {
+    const newNote = {
+      id: nanoid(),
+      body: "# Type your markdown note's title here"
+    }
+    setNotes(prevNotes => [newNote, ...prevNotes])
+    setCurrentNoteId(newNote.id)
+  }
+  function findCurrentNote() {
+    return notes.find(note => note.id === currentNoteId) || notes[0]
+  }
+  function updateNote(text) {
+    setNotes(oldNotes => {
+      return oldNotes.map(oldNote => {
+        return oldNote.id === currentNoteId ? { ...oldNote, body: text }
+        : oldNote
+      })
+    })
+  }
   return (
-    <div className='app-container'>
-    </div>
+    <main>
+      {
+        notes.length > 0 ?
+        <Split
+          sizes={[30, 70]}
+          direction="horizontal"
+          className="split"
+        >
+          <Sidebar
+            notes={notes}
+            setCurrentNoteId={setCurrentNoteId}
+            newNote={createNewNote}
+            currentNote={findCurrentNote()}
+          />
+          {
+            currentNoteId &&
+            notes.length > 0 &&
+            <Editor
+              currentNote={findCurrentNote()}
+              updateNode={updateNote}
+            />
+          }
+        </Split>
+        :
+        <div className='no-notes'>
+          <h1>You have no notes</h1>
+          <button
+            className='first-note'
+            onClick={createNewNote}
+          >
+            Create one now
+          </button>
+        </div>
+      }
+    </main>
   )
 }
 
