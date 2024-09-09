@@ -33,6 +33,13 @@ function App() {
       return [updatedNote, ...filteredNotes];
     })
   }
+  function deleteNote(event, noteId) {
+    event.stopPropagation();
+    setNotes(notes => {
+      const filteredNotes = notes.filter(note => note.id !== noteId);
+      return filteredNotes;
+    })
+  }
   React.useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes))
   }, [notes])
@@ -50,6 +57,7 @@ function App() {
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
             currentNote={findCurrentNote()}
+            deleteNote={deleteNote}
           />
           {
             currentNoteId &&
