@@ -9,7 +9,7 @@ function App() {
     () => JSON.parse(localStorage.getItem('notes')) || []
   );
   const [currentNoteId, setCurrentNoteId] = React.useState(
-    (notes[0] && notes[0].id) || ""
+    (notes[0]?.id) || ""
   )
   const currentNote = notes.find(note => note.id === currentNoteId) || notes[0];
   function createNewNote() {
