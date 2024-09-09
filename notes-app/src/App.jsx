@@ -11,6 +11,7 @@ function App() {
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
   )
+  const currentNote = notes.find(note => note.id === currentNoteId) || notes[0];
   function createNewNote() {
     const newNote = {
       id: nanoid(),
@@ -18,9 +19,6 @@ function App() {
     }
     setNotes(prevNotes => [newNote, ...prevNotes])
     setCurrentNoteId(newNote.id)
-  }
-  function findCurrentNote() {
-    return notes.find(note => note.id === currentNoteId) || notes[0]
   }
   function updateNote(text) {
     setNotes(oldNotes => {
@@ -56,14 +54,14 @@ function App() {
             notes={notes}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
-            currentNote={findCurrentNote()}
+            currentNote={currentNote}
             deleteNote={deleteNote}
           />
           {
             currentNoteId &&
             notes.length > 0 &&
             <Editor
-              currentNote={findCurrentNote()}
+              currentNote={currentNote}
               updateNote={updateNote}
             />
           }
