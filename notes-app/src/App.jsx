@@ -24,10 +24,13 @@ function App() {
   }
   function updateNote(text) {
     setNotes(oldNotes => {
-      return oldNotes.map(oldNote => {
+      const updatedNotes = oldNotes.map(oldNote => {
         return oldNote.id === currentNoteId ? { ...oldNote, body: text }
         : oldNote
-      })
+      });
+      const updatedNote = updatedNotes.find(note => note.id === currentNoteId);
+      const filteredNotes = updatedNotes.filter(note => note.id !== currentNoteId);
+      return [updatedNote, ...filteredNotes];
     })
   }
   React.useEffect(() => {
