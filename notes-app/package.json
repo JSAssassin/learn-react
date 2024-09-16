@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "nanoid": "^5.0.7",
+    "firebase": "^10.13.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-mde": "^11.5.0",
