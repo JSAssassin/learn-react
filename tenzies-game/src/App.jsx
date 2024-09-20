@@ -13,12 +13,21 @@ function App() {
   }
   const diceElements = dice.map(
     (die, index) => <Die key={index + 1} value={die} />);
-
+  function updateDice() {
+    setDice(allNewDice())
+  }
   return (
     <main>
       <div className="dice-container">
         {diceElements}
       </div>
+      <button
+        type="button"
+        className="roll-btn"
+        onClick={updateDice}
+      >
+          Roll
+      </button>
     </main>
   )
 }
