@@ -66,8 +66,8 @@ main {
 }
 
 .dot-4 {
-  width: 85%;
-  height: 85%;
+  width: 80%;
+  height: 80%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -75,8 +75,8 @@ main {
 }
 
 .dot-5 {
-  width: 65%;
-  height: 65%;
+  width: 60%;
+  height: 60%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -132,4 +132,26 @@ main {
   font-weight: 400;
   margin-top: 0;
   text-align: center;
+}
+
+.game-stats {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px grey;
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.game-stats h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.game-stats p {
+  font-size: 18px;
 }

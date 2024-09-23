@@ -2,10 +2,12 @@ import Confetti from 'react-confetti'
 import Die from './components/Die'
 import {nanoid} from "nanoid"
 import React from 'react'
+import Stats from './components/Stats'
 
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
   const [tenzies, setTenzies] = React.useState(false);
+  const [numOfRolls, setNumOfRolls] = React.useState(0);
   function getRandomValue() {
     return Math.floor(Math.random() * 6 + 1);
   }
@@ -24,8 +26,10 @@ function App() {
   function rollDice(e) {
     if(tenzies && e.target.textContent === 'New Game') {
       setTenzies(false);
+      setNumOfRolls(0);
       setDice(allNewDice());
     } else {
+      setNumOfRolls(numOfRolls+1);
       setDice(oldDice => oldDice.map(
         die => die.isHeld ? die :
         {...die, value: getRandomValue()}));
@@ -46,7 +50,12 @@ function App() {
   }, [dice])
   return (
     <main>
-      {tenzies && <Confetti width={window.innerWidth} height={window.innerHeight}/>}
+      {tenzies && (
+        <div>
+          <Stats numOfRolls={numOfRolls} />
+          <Confetti width={window.innerWidth} height={window.innerHeight}/>
+        </div>
+      )}
       <h1 className="title">Tenzies</h1>
       <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
       <div className="dice-container">
