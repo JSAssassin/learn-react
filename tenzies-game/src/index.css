@@ -128,6 +128,7 @@ main {
 }
 
 .instructions {
+  width: 70%;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   margin-top: 0;
@@ -147,11 +148,20 @@ main {
   z-index: 1000;
 }
 
-.game-stats h1 {
-  margin-bottom: 10px;
-  font-size: 30px;
+.stats-title {
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.game-stats p {
-  font-size: 18px;
+.stats-item {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+.timer-container {
+  align-items: center;
+  font-size: 2.5rem;
+  color: rgb(57, 53, 53);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
