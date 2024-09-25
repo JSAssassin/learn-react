@@ -9,6 +9,7 @@ function App() {
   const [dice, setDice] = React.useState([]);
   const [numOfRolls, setNumOfRolls] = React.useState(0);
   const [ticks, setTicks] = React.useState(0);
+  const [bestRecord, setBestRecord] = React.useState(JSON.parse(localStorage.getItem('bestRecord')) || null);
   const [isRunning, setIsRunning] = React.useState(false);
   const [tenzies, setTenzies] = React.useState(false);
   function getRandomValue() {
@@ -27,7 +28,7 @@ function App() {
     return result;
   }
   function rollDice(e) {
-    if(tenzies && e.target.textContent === 'New Game') {
+    if(tenzies && e.target.textContent === 'Reset') {
       setTenzies(false);
       setNumOfRolls(0);
       setDice([]);
@@ -65,10 +66,13 @@ function App() {
     const hasWon = dice.length > 0 && dice.every(
       die => die.isHeld === true && die.value === dice[0].value);
     if(hasWon) {
-      setTenzies(true);
+      if(!bestRecord || bestRecord > ticks) {
+        setBestRecord(ticks)
+      }
       setIsRunning(false);
+      setTenzies(true);
     };
-  }, [dice])
+  }, [dice, bestRecord, ticks])
   React.useEffect(() => {
     let intervalId;
     if(isRunning) {
@@ -77,12 +81,15 @@ function App() {
       }, 10)
     }
     return () => clearInterval(intervalId)
-  }, [isRunning, ticks])
+  }, [isRunning])
+  React.useEffect(() => {
+    localStorage.setItem("bestRecord", JSON.stringify(bestRecord));
+  }, [bestRecord])
   return (
     <main>
       {tenzies && (
         <div>
-          <Stats numOfRolls={numOfRolls} ticks={ticks} />
+          <Stats numOfRolls={numOfRolls} ticks={ticks} bestRecord={bestRecord} />
           <Confetti width={window.innerWidth} height={window.innerHeight} />
         </div>
       )}
@@ -102,7 +109,7 @@ function App() {
         className="roll-btn"
         onClick={rollDice}
       >
-        {tenzies ? 'New Game' : 'Roll'}
+        {tenzies ? 'Reset' : 'Roll'}
       </button>
     </main>
   )
