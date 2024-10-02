@@ -10,12 +10,12 @@ function App() {
   function startQuiz() {
     setStarted(true);
   }
-  const {data: {questions}} = questionsData;
-  const quiz = questions.map(question =>
+  const {data: {questions: quizQuestions}} = questionsData;
+  const quiz = quizQuestions.map(quizQuestion =>
     <Question
-      key={question.id}
-      question={question.question}
-      answerOptions={question.answerOptions}
+      key={quizQuestion.id}
+      question={quizQuestion.question}
+      answerOptions={quizQuestion.answerOptions}
     />
   )
   return (
