@@ -1,15 +1,7 @@
-import topRightBlob from '../assets/top-right-blob.png';
-import bottomLeftBlob from '../assets/bottom-left-blob.png';
-
 export default function Intro(props) {
     const {startQuiz} = props;
     return (
         <main className='intro-container'>
-            <img
-                src={`${topRightBlob}`}
-                alt="Light yellow blob in the top right corner."
-                className='intro-top-right-blob-img'
-            />
             <h1 className='intro-title'>Quizzical</h1>
             <p className='intro-description'>
                 Welcome to Quizzical! Put your knowledge to the test with a fun
@@ -25,11 +17,6 @@ export default function Intro(props) {
             >
                 Start quiz
             </button>
-            <img
-                src={`${bottomLeftBlob}`}
-                alt="Light blue blob in the bottom left corner."
-                className='intro-bottom-left-blob-img'
-            />
         </main>
     )
 }
