@@ -15,6 +15,8 @@
   --bottom-left-blob-bg: #DEEBF8;
   --options-border-color: #4D5B9E;
   --selected-option-bg-color: #D6DBF5;
+  --correct-option-bg-color: #94D7A2;
+  --incorrect-option-bg-color: #F8BCBC;
 }
 
 html, body {
@@ -134,7 +136,8 @@ html, body {
   cursor: pointer;
 }
 
-.check-answers-btn {
+.check-answers-btn,
+.play-again-btn {
   background: var(--btn-bg-color);
   color: var(--btn-txt-color);
   font-family: var(--font-family-inter);
@@ -145,8 +148,11 @@ html, body {
   width: 120px;
   border-radius: 10px;
   border: none;
-  margin-top: 20px;
   align-self: center;
+}
+
+.check-answers-btn {
+  margin-top: 20px;
 }
 
 .answerOptions label:hover {
@@ -161,4 +167,22 @@ html, body {
 .answerOptions input[type="radio"]:checked + label {
   background: var(--selected-option-bg-color);
   border: 0.79px solid var(--selected-option-bg-color);
+}
+
+.score-summary {
+  display: flex;
+  column-gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-summary p {
+  font-family: var(--font-family-inter);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.answerOptions input:disabled + label {
+  pointer-events: none;
 }

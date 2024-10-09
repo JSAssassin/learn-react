@@ -1,35 +1,63 @@
-import topRightBlob from './assets/top-right-blob.png';
+import {useState} from 'react';
 import bottomLeftBlob from './assets/bottom-left-blob.png';
-import {useEffect, useState} from 'react';
 import Intro from './components/Intro';
+import topRightBlob from './assets/top-right-blob.png';
 import Question from './components/Question';
-import questionsData from './questionsData';
+import {quizAnswers, quizQuestions} from './helpers';
 
 function App() {
   const [started, setStarted] = useState(false);
-  const [answers, setAnswers] = useState({});
+  const [userAnswers, setUserAnswers] = useState({});
+  const [editable, setEditable] = useState(true);
+  const [checkAnswers, setCheckAnswers] = useState(false);
+  const [score, setScore] = useState(0);
+
+
+  const quiz = quizQuestions.map(quizQuestion => {
+    return (
+      <Question
+        key={quizQuestion.id}
+        questionId={quizQuestion.id}
+        question={quizQuestion.question}
+        answerOptions={quizQuestion.answerOptions}
+        handleOptionSelect={handleOptionSelect}
+        editable={editable}
+      />
+    )
+  })
 
   function startQuiz() {
     setStarted(true);
   }
 
   function handleOptionSelect(questionId, answerIndex) {
-    setAnswers(prevValues => {
+    setUserAnswers(prevValues => {
       return {...prevValues, [questionId]: answerIndex};
     });
   }
 
-  useEffect(() => {
-    console.log('answers: ', answers);
-  })
-  const {data: {questions: quizQuestions}} = questionsData;
-  const quiz = quizQuestions.map(quizQuestion =>
-    <Question
-      key={quizQuestion.id}
-      quizQuestion={quizQuestion}
-      handleOptionSelect={handleOptionSelect}
-    />
-  )
+  function handleCheckAnswers() {
+    if(Object.keys(userAnswers).length !== quizQuestions.length) {
+      alert("Please select answers for all questions.");
+      return;
+    }
+    setEditable(false);
+    setCheckAnswers(true);
+    for (let quizAnswer of quizAnswers) {
+      if(userAnswers[quizAnswer.questionId] === quizAnswer.correctAnswer) {
+        setScore(prev => prev + 1);
+      }
+    }
+  }
+
+  function handlePlayAgain() {
+    setStarted(false);
+    setEditable(true);
+    setCheckAnswers(false);
+    setUserAnswers({});
+    setScore(0);
+  }
+
   return (
     <div>
       <img
@@ -42,9 +70,19 @@ function App() {
           started  ?
           <div className='quiz'>
             {quiz}
-            <button type="button" className='check-answers-btn'>
-              Check answers
-            </button>
+            {
+              checkAnswers ?
+              <div className="score-summary">
+                <p>You scored {score} / {quizQuestions.length} correct answers</p>
+                <button type="button" className='play-again-btn' onClick={handlePlayAgain}>
+                  Play again
+                </button>
+              </div>
+              :
+              <button type="button" className='check-answers-btn' onClick={handleCheckAnswers}>
+                Check answers
+              </button>
+            }
           </div>
           :
           <Intro startQuiz={startQuiz}/>
