@@ -186,3 +186,26 @@ html, body {
 .answerOptions input:disabled + label {
   pointer-events: none;
 }
+
+.answerOptions input.correctAnswer + label::before,
+.answerOptions input.correctAnswer + label {
+  background: var(--correct-option-bg-color);
+  border: 0.79px solid var(--correct-option-bg-color);
+}
+
+.answerOptions input.correctAnswer:checked + label::before,
+.answerOptions input.correctAnswer:checked + label {
+  background: var(--correct-option-bg-color);
+  border: 0.79px solid var(--correct-option-bg-color);
+}
+
+.answerOptions input.incorrectAnswer:checked + label::before,
+.answerOptions input.incorrectAnswer:checked + label {
+  background: var(--incorrect-option-bg-color);
+  border: 0.79px solid var(--incorrect-option-bg-color);
+  opacity: 50%;
+}
+
+.answerOptions input:not(.correctAnswer):not(.incorrectAnswer):disabled + label {
+  opacity: 50%;
+}

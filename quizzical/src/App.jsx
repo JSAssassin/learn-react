@@ -10,6 +10,8 @@ function App() {
   const [userAnswers, setUserAnswers] = useState({});
   const [editable, setEditable] = useState(true);
   const [checkAnswers, setCheckAnswers] = useState(false);
+  const [correctAnswers, setCorrectAnswers] = useState({});
+  const [incorrectAnswers, setIncorrectAnswers] = useState({});
   const [score, setScore] = useState(0);
 
 
@@ -22,6 +24,9 @@ function App() {
         answerOptions={quizQuestion.answerOptions}
         handleOptionSelect={handleOptionSelect}
         editable={editable}
+        checkAnswers={checkAnswers}
+        correctAnswers={correctAnswers}
+        incorrectAnswers={incorrectAnswers}
       />
     )
   })
@@ -41,13 +46,20 @@ function App() {
       alert("Please select answers for all questions.");
       return;
     }
-    setEditable(false);
     setCheckAnswers(true);
+    setEditable(false);
+    const incorrectAnswers = {};
+    const correctAnswers = {};
     for (let quizAnswer of quizAnswers) {
+      correctAnswers[quizAnswer.questionId] = quizAnswer.correctAnswer;
       if(userAnswers[quizAnswer.questionId] === quizAnswer.correctAnswer) {
         setScore(prev => prev + 1);
+      } else {
+        incorrectAnswers[quizAnswer.questionId] = userAnswers[quizAnswer.questionId]
       }
     }
+    setCorrectAnswers(correctAnswers);
+    setIncorrectAnswers(incorrectAnswers);
   }
 
   function handlePlayAgain() {
@@ -55,6 +67,8 @@ function App() {
     setEditable(true);
     setCheckAnswers(false);
     setUserAnswers({});
+    setCorrectAnswers({});
+    setIncorrectAnswers({});
     setScore(0);
   }
 

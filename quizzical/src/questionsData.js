@@ -24,7 +24,7 @@ export default {
             },
             {
                 id: '5',
-                question: 'How Many Hearts Does An Octopus Have?',
+                question: 'How many hearts does an Octopus have?',
                 answerOptions: ['One', 'Two', 'Three', 'Four']
             }
         ]
