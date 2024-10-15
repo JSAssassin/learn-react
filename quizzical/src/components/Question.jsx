@@ -1,30 +1,23 @@
+import AnswerOption from './AnswerOption';
 
 export default function Question(props) {
     const {
-        questionId, question, answerOptions, handleOptionSelect, editable,
-        checkAnswers, correctAnswers, incorrectAnswers,
+        question, answerOptions, questionId, handleOptionSelect, editable,
+        checkAnswers,correctAnswers, incorrectAnswers
     } = props;
     const options = answerOptions.map((option, index) => {
-        const id = `quiz-${questionId}-${index}`;
-        const isCorrect = correctAnswers[questionId] === index;
-        const isIncorrect = incorrectAnswers[questionId] === index;
         return (
-            <div  key={index}>
-                <input
-                    id={id}
-                    type="radio"
-                    name={`quiz-${questionId}`}
-                    value={index}
-                    disabled={editable ? false : true}
-                    className={
-                        checkAnswers ? `${isCorrect ? 'correctAnswer' : ''} ${isIncorrect ? 'incorrectAnswer' : ''}`.trim() : ''
-                    }
-                    onClick={() => handleOptionSelect(questionId, index)}
-                />
-                <label htmlFor={id}>
-                    {option}
-                </label>
-            </div>
+            <AnswerOption
+                key={index}
+                index={index}
+                option={option}
+                questionId={questionId}
+                handleOptionSelect={handleOptionSelect}
+                editable={editable}
+                checkAnswers={checkAnswers}
+                correctAnswers={correctAnswers}
+                incorrectAnswers={incorrectAnswers}
+            />
         )
     })
     return (
