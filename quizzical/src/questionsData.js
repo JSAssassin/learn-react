@@ -4,28 +4,38 @@ export default {
         "questions": [
             {
                 id: '1',
-                question: 'How would one say goodbye in Spanish?',
-                answerOptions: ['Adiós', 'Hola', 'Au Revoir', 'Salir']
+                question: 'Which planet is known as the Red Planet?',
+                answerOptions: ['Mars', 'Jupiter', 'Saturn', 'Venus']
             },
             {
                 id: '2',
-                question: 'Which best selling toy of 1983 caused hysteria, resulting in riots breaking in stores?',
-                answerOptions: ['Cabbage Patch Kids', 'Transformers', 'Care Bears', 'Rubik’s Cube']
+                question: 'What is the capital of Japan?',
+                answerOptions: ['Beijing', 'Seoul', 'Tokyo', 'Bangkok']
             },
             {
                 id: '3',
-                question: 'What is the hottest planet in our Solar System?',
-                answerOptions: ['Mercury', 'Venus', 'Mars', 'Saturn']
+                question: 'Which element has the chemical symbol O?',
+                answerOptions: ['Oxygen', 'Gold', 'Iron', 'Osmium']
             },
             {
                 id: '4',
-                question: 'In which country was the caesar salad invented?',
-                answerOptions: ['Italy', 'Portugal', 'Mexico', 'France']
+                question: 'Who wrote the play "Romeo and Juliet"?',
+                answerOptions: ['William Shakespeare', 'Jane Austen', 'Mark Twain', 'Charles Dickens']
             },
             {
                 id: '5',
-                question: 'How many hearts does an Octopus have?',
-                answerOptions: ['One', 'Two', 'Three', 'Four']
+                question: 'What is the largest ocean on Earth?',
+                answerOptions: ['Atlantic', 'Pacific', 'Indian', 'Southern']
+            },
+            {
+                id: '6',
+                question: 'Which country is home to the kangaroo?',
+                answerOptions: ['South Africa', 'Australia', 'India', 'Brazil']
+            },
+            {
+                id: '7',
+                question: 'How many rings are on the Olympic flag?',
+                answerOptions: ['Three', 'Four', 'Five', 'Six']
             }
         ]
     }
