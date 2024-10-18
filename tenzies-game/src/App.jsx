@@ -98,7 +98,7 @@ function App() {
         Decide what number you want to freeze or target before your first roll.
         Once you have made your choice, roll the dice until all the dice show
         the same number. Click each die to freeze it at its current value
-        between rolls.
+        between rolls. 
       </p>
       <div className="dice-container">
         {diceElements}
