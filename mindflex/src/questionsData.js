@@ -30,7 +30,7 @@ export default {
             {
                 id: '6',
                 question: 'Which country is home to the kangaroo?',
-                answerOptions: ['South Africa', 'Australia', 'India', 'Brazil']
+                answerOptions: ['Bhutan', 'Australia', 'India', 'Brazil']
             },
             {
                 id: '7',

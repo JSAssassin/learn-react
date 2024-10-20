@@ -93,9 +93,11 @@ function App() {
                 </button>
               </div>
               :
-              <button type="button" className='check-answers-btn' onClick={handleCheckAnswers}>
-                Check answers
-              </button>
+              <div className='check-answers-btn-container'>
+                <button type="button" className='check-answers-btn' onClick={handleCheckAnswers}>
+                  Check answers
+                </button>
+              </div>
             }
           </div>
           :
