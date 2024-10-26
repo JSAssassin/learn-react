@@ -4,6 +4,8 @@ function App() {
   const [text, setText] = React.useState("")
   const [list, setList] = React.useState([])
 
+  const inputRef = React.useRef(null);
+
   function handleChange(e) {
     setText(e.target.value)
   }
@@ -15,6 +17,7 @@ function App() {
     }
     setList(prevList => [...prevList, text])
     setText("")
+    inputRef.current.focus()
   }
   return (
     <>
@@ -25,6 +28,7 @@ function App() {
           onChange={handleChange}
           value={text}
           placeholder="Idea"
+          ref={inputRef}
         />
         <button>Submit</button>
       </form>
