@@ -34,7 +34,7 @@ body {
     margin-right: 15px;
 }
 
-.square, .pill {
+.badge-square, .badge-pill {
     height: 24px;
     width: 68px;
     font-family: 'Inter', sans-serif;
@@ -45,47 +45,72 @@ body {
     justify-content: center;
 }
 
-.pill {
-    border-radius: 12px;
-
-}
-
-.gray {
+.badge-gray {
     background: #F3F4F6;
     color: #1F2937;
 }
 
-.red {
+.badge-red {
     background: #FEE2E2;
     color: #991B1B;
 }
 
-.yellow {
+.badge-yellow {
     background: #FEF3C7;
     color: #92400E;
 }
 
-.green {
+.badge-green {
     background: #D1FAE5;
     color: #065F46;
 }
 
-.blue {
+.badge-blue {
     background: #DBEAFE;
     color: #1E40AF;
 }
 
-.indigo {
+.badge-indigo {
     background: #E0E7FF;
     color: #3730A3;
 }
 
-.purple {
+.badge-purple {
     background: #EDE9FE;
     color: #5B21B6;
 }
 
-.pink {
+.badge-pink {
     background: #FCE7F3;
     color: #9D174D;
+}
+
+.badge-large {
+    height: 44px;
+    width: 108px;
+    font-size: 22px;
+}
+
+.badge-medium {
+    height: 34px;
+    width: 88px;
+    font-size: 18px;
+}
+
+.badge-small {
+    height: 24px;
+    width: 68px;
+    font-size: 14px;
+}
+
+.badge-pill.badge-small {
+    border-radius: 12px;
+}
+
+.badge-pill.badge-medium {
+    border-radius: 17px;
+}
+
+.badge-pill.badge-large {
+    border-radius: 22px;
 }
