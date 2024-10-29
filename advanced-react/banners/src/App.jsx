@@ -1,57 +1,38 @@
 import Banner from './components/Banner'
+import { data } from './data'
 
 function App() {
+  const bannerTitles = data.map((d, i) => <h1 key={i}>{d.status}</h1>);
+  const bannersWithText = data.map((d, i) => <Banner
+    key={`bannersWithText - ${i}`}
+    title={d.title}
+    status={d.status.toLowerCase()}
+    text={d.text}
+  />)
+
+  const dataCopy = JSON.parse(JSON.stringify(data));
+  dataCopy.forEach(item => delete item.text);
+
+  const bannersWithoutText = dataCopy.map((d, i) => <Banner
+    key={`bannersWithoutText - ${i}`}
+    title={d.title}
+    status={d.status.toLowerCase()}
+  />)
+
   return (
     <>
       <h1 className='title'>Banners</h1>
       <div className="banners-container">
         <div className="banner-titles">
-          <h1>Success</h1>
-          <h1>Warning</h1>
-          <h1>Error</h1>
-          <h1>Neutral</h1>
+          {bannerTitles}
         </div>
         <div className="banner-section">
-          <h1 className="section-header multiline">Multi Line</h1>
-          <Banner
-            title='Congratulations!'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.'
-            status='success'
-          />
-          <Banner
-            title='Attention'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.'
-            status='warning'
-          />
-          <Banner
-            title='There is a problem with your application'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.'
-            status='error'
-          />
-          <Banner
-            title='Update available'
-            text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.'
-            status='neutral'
-          />
+          <h1 className="section-header">Multi Line</h1>
+          {bannersWithText}
         </div>
         <div className="banner-section">
-          <h1 className="section-header singleline">Single Line</h1>
-          <Banner
-            title='Congratulations!'
-            status='success'
-          />
-          <Banner
-            title='Attention'
-            status='warning'
-          />
-          <Banner
-            title='There is a problem with your application'
-            status='error'
-          />
-          <Banner
-            title='Update available'
-            status='neutral'
-          />
+          <h1 className="section-header">Single Line</h1>
+          {bannersWithoutText}
         </div>
       </div>
     </>
