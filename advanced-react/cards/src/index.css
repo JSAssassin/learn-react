@@ -110,7 +110,7 @@ body {
     top: 0;
     right: 0;
     transform-origin: top right;
-    transform: rotate(23.97deg) translateY(-40px) translateX(38px);
+    transform: rotate(23.97deg) translate(38px, -40px);;
     color: #5E5D5D;
     font-size: 2rem;
     font-weight: 400;

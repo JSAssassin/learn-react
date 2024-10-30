@@ -1,7 +1,12 @@
 import { IoCloudUploadOutline } from "react-icons/io5";
 import classnames from 'classnames';
 
-export default function Card({children, icon=<IoCloudUploadOutline />,  className = '', size = 'md', iconBg = ''}) {
+export default function Card({
+    children, icon=<IoCloudUploadOutline />,
+    className = '',
+    size = 'md',
+    iconBg = ''
+}) {
     const allClasses = classnames(`card-${size}`, className);
     const styles = {
         backgroundColor: iconBg || '#3F75FE'
