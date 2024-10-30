@@ -12,3 +12,113 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-title {
+    font-size: 4rem;
+    margin: 1em;
+}
+
+.card {
+    background: #F9FAFB;
+    font-family: 'Inter', sans-serif;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 25px 0px #0000001A;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon svg {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+}
+
+.card-sm {
+    width: 334px;
+    height: 158px;
+    padding: 18px 26px;
+}
+
+.icon-sm {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+}
+
+.card-md {
+    width: 384px;
+    height: 208px;
+    padding: 24px 32px;
+}
+
+.icon-md {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+.card-lg {
+    width: 434px;
+    height: 258px;
+    padding: 30px 38px;
+}
+
+.icon-lg {
+    width: 58px;
+    height: 58px;
+    border-radius: 6px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.card-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+.hover-text {
+    position: absolute;
+    font-family: 'Permanent Marker', cursive;
+    top: 0;
+    right: 0;
+    transform-origin: top right;
+    transform: rotate(23.97deg) translateY(-40px) translateX(38px);
+    color: #5E5D5D;
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 3s ease;
+    pointer-events: none;
+}
+
+.card:hover .hover-text {
+    opacity: 1;
+}
