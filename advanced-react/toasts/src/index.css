@@ -19,12 +19,6 @@ body {
     margin-bottom: 40px;
 }
 
-.toasts-container {
-    display: grid;
-    grid-template-columns: repeat(2, 385px);
-    gap: 20px;
-}
-
 .toast {
     display: flex;
     column-gap: 12px;
@@ -33,6 +27,10 @@ body {
     height: 78px;
     padding: 1em;
     border-radius: 8px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .toast-header {
@@ -41,7 +39,8 @@ body {
     row-gap: 4px;
 }
 
-.toast-header h1, p {
+.toast-header h1,
+p {
     font-size: 14px;
 }
 
@@ -50,7 +49,8 @@ body {
     width: 18px;
 }
 
-.toast-success {
+.toast-success,
+.btn-success {
     background: #ECFDF5;
 }
 
@@ -62,7 +62,8 @@ body {
     color: #047857;
 }
 
-.toast-warning {
+.toast-warning,
+.btn-warning {
     background: #FFFBEB;
 }
 
@@ -76,11 +77,13 @@ body {
     color: #B45309;
 }
 
-.toast-error {
+.toast-error,
+.btn-error {
     background: #FEF2F2;
 }
 
-.toast-information {
+.toast-information,
+.btn-information {
     background: #EFF6FF;
 }
 
@@ -112,4 +115,20 @@ body {
 .toast-information .icon svg {
     stroke: #60A5FA;
     stroke-width: 2px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    gap: 20px;
+}
+
+.btn {
+    height: 80px;
+    width: 300px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
 }
