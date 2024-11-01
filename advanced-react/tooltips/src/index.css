@@ -19,116 +19,178 @@ body {
     margin-bottom: 40px;
 }
 
-.toast {
+.dialogue-box {
     display: flex;
     column-gap: 12px;
-    font-family: 'Inter', sans-serif;
-    width: 384px;
-    height: 78px;
+    position: relative;
     padding: 1em;
     border-radius: 8px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+    width: 384px;
+    height: 98px;
+    box-shadow: 0px 4px 6px -2px #0000000D;
 }
 
-.toast-header {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
+.dialogue-box::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f0f0f0;
 }
 
-.toast-header h1,
-p {
+.tooltip-header h1, p {
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
 
-.toast .icon svg {
-    height: 18px;
-    width: 18px;
+.tooltip-header h1 {
+    font-weight: 700;
+    margin-bottom: 4px;
 }
 
-.toast-success,
-.btn-success {
-    background: #ECFDF5;
+.tooltip-header p {
+    font-weight: 400;
 }
 
-.toast-success h1 {
-    color: #065F46;
+.icon svg {
+    width: 24px;
+    height: 24px;
 }
 
-.toast-success p {
-    color: #047857;
+.default {
+    background: #FFFFFF;
 }
 
-.toast-warning,
-.btn-warning {
-    background: #FFFBEB;
+.default h1 {
+    color: #111827;
 }
 
-.toast-warning h1,
-.toast-error h1 {
-    color: #92400E;
+.default p {
+    color: #6B7280;
 }
 
-.toast-warning p,
-.toast-error p {
-    color: #B45309;
+.default .icon svg {
+    stroke: #6B7280;
 }
 
-.toast-error,
-.btn-error {
-    background: #FEF2F2;
+.ocean {
+    background: #E0E7FF;
 }
 
-.toast-information,
-.btn-information {
-    background: #EFF6FF;
-}
-
-.toast-information h1 {
+.ocean h1 {
     color: #1E40AF;
 }
 
-.toast-information p {
+.ocean p {
     color: #1C51B9;
 }
 
-.toast-success .icon svg {
-    fill: #34D399;
-    stroke: #34D399;
-    stroke-width: 2px;
+.ocean .icon svg {
+    stroke: #1C51B9;
 }
 
-.toast-warning .icon svg {
-    stroke: #FBBF24;
-    stroke-width: 2px;
+.peach {
+    background: #FFF3FC;
 }
 
-.toast-error .icon svg {
-    fill: #F87171;
-    stroke-width: 2px;
-    stroke: #F87171;
+.peach h1 {
+    color: #A9229B;
 }
 
-.toast-information .icon svg {
-    stroke: #60A5FA;
-    stroke-width: 2px;
+.peach p {
+    color: #C7369E;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 350px);
-    gap: 20px;
+.peach .icon svg {
+    stroke: #C7369E;
 }
 
-.btn {
-    height: 80px;
-    width: 300px;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    border: none;
-    border-radius: 5px;
+.avacado {
+    background: #E7FFF3;
+}
+
+.avacado h1 {
+    color: #137A2A;
+}
+
+.avacado p {
+    color: #3C8C4E;
+}
+
+.avacado .icon svg {
+    stroke: #41A557;
+}
+
+.tooltip-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .default {
+        background: #262626;
+    }
+
+    .default h1 {
+        color: #FFFFFF;
+    }
+
+    .default p {
+        color: #C7C7C7;
+    }
+
+    .default .icon svg {
+        stroke: #C7C7C7;
+    }
+
+    .ocean {
+        background: #1E40AF;
+    }
+
+    .ocean h1 {
+        color: #FFFFFF;
+    }
+
+    .ocean p {
+        color: #E8EDFF;
+    }
+
+    .ocean .icon svg {
+        stroke: #7EA6F2;
+    }
+
+    .peach {
+        background: #A9229B;
+    }
+
+    .peach h1 {
+        color: #FFFFFF;
+    }
+
+    .peach p {
+        color: #FFE9FD;
+    }
+
+    .peach .icon svg {
+        stroke: #F462E6;
+    }
+
+    .avacado {
+        background: #47AA5D;
+    }
+
+    .avacado h1 {
+        color: #FFFFFF;
+    }
+
+    .avacado p {
+        color: #E3FFE9;
+    }
+
+    .avacado .icon svg {
+        stroke: #C1FFCF;
+    }
 }
