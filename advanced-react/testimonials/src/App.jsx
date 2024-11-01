@@ -1,4 +1,5 @@
 import Testimonials from "./components/Testimonial"
+import profileImg from "./assets/images/profile.png"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in
         laborum sed rerum et corporis.'
         author={{name: 'May Andersons', position: 'CTO, Workcation'}}
+        profileImg={profileImg}
       />
     </div>
   )

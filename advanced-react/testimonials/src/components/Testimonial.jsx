@@ -37,17 +37,17 @@ export default function Testimonials({
         }
     }
     return (
-    <div className="testimonial-container" style={containerStyles}>
+    <div className={profileImg ? "testimonial-container-with-img" :  "testimonial-container" } style={containerStyles}>
         {
             profileImg ? <img src={profileImg} alt="User Profile" className="profile-img" /> :
             <img src={logo} alt="App Logo" className="logo"/>
         }
-        <div className='testimonial' style={testimonialStyles}>
+        <div className={profileImg ? "testimonial-with-img" :  "testimonial" } style={testimonialStyles}>
             {profileImg && <BiSolidQuoteAltLeft className='icon'/>}
             <p className="testimonial-text" style={testimonialTextStyles}>
                 {`"${text}"`}
             </p>
-            <div className="testimonial-author">
+            <div className={profileImg ? "testimonial-author-with-img" : "testimonial-author" }>
                 <p className="author-name">{author.name}</p>
                 <p className="author-position" style={authorPositionStyle}>{author.position}</p>
             </div>
