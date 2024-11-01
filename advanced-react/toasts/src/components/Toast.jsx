@@ -24,12 +24,14 @@ export default function Toast({
         `toast-${status.toLowerCase()}`,
         className
     );
+
     React.useEffect(() => {
         const timer = setTimeout(() => {
             if (onClose) onClose();
         }, timeout);
         return () => clearTimeout(timer);
     }, [timeout, onClose]);
+
     const toastContent = (
         <div className={allClasses}>
             <span className="icon">{icon}</span>
